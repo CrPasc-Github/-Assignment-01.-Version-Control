@@ -1,18 +1,21 @@
 package cse360assignment02;
+
 /**
  * https://github.com/CrPasc-Github/-Assignment-01.-Version-Control
  * 
  * <h1> Adding Machine <h1>
  * This assignment is designed to practice using a version control system
- *
+ * 
  */
 public class AddingMachine {
   private int total;
+  private String history;
   
   /** 
    * constructor
    */
   public AddingMachine () {
+    history = "0";
     total = 0;  // not needed - included for clarity
   }
   
@@ -29,6 +32,8 @@ public class AddingMachine {
    * @param value used
    */
   public void add (int value) {
+	  total = total + value;
+	  history += " + " + value;
   }
 
   /** 
@@ -37,6 +42,8 @@ public class AddingMachine {
    * @param value used
    */
   public void subtract (int value) {
+	  total = value;
+	  history += " - " + value;
   }
 
   /** 
@@ -46,12 +53,14 @@ public class AddingMachine {
    * @return string This returns the history
    */
   public String toString () {
-    return "";
+    return history;
   }
-
+  
   /**
    * The clear method should clear the "memory"
    */
   public void clear() {
-  }
+	  total = 0;
+	  history = "0";
+  } 
 }
